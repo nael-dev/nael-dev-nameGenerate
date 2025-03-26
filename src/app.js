@@ -20,20 +20,14 @@ const joinWords2 = () => {
       for (let a in noum) {
         for (let ext in extensions) {
           let dominio = pronoum[e] + adj[i] + noum[a] + extensions[ext];
+          //console.log(dominio);
           dominios.push(dominio);
         }
       }
     }
   }
-  return dominios.join('\n');
+  return dominios;
 }
-
-
-
-
-
-
-
 
 /*const joinWords = () => {
   let dominios = [];
@@ -54,16 +48,16 @@ const joinWords2 = () => {
 
   }
  
-
   return dominios.join('\n');
-
 }
   */
 
 window.onload = function () {
   //write your code here
 
-  document.getElementById("change").innerHTML = joinWords2('\n');
-  //console.log(joinWords());
-  console.log(joinWords2());
+  const dominios = joinWords2();
+  for (let e in dominios){
+    console.log(dominios[e]);
+  }
+  
 };
